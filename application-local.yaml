@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/PaymentDB
+    username: postgres
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+  redis:
+    host: localhost
+    port: 6379

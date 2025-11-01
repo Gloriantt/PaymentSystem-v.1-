@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: liquibase
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: card_info
+            baseColumnNames: user_id
+            constraintName: fk_card_info_user
+            referencedTableName: users
+            referencedColumnNames: id
+        - createIndex:
+            tableName: card_info
+            indexName: idx_card_info_user_id
+            columns:
+              - column:
+                  name: user_id
+        - createIndex:
+            tableName: users
+            indexName: idx_users_email
+            columns:
+              - column:
+                  name: email
